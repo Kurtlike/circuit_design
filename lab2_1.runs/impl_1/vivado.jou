@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Tue May  3 14:55:18 2022
+# Process ID: 6742
+# Current directory: /media/kurtlike/0bc13ae9-569d-48dc-9158-75f16c6ace65/Vivaldo/Vivado/2021.2/bin/lab2_1/lab2_1.runs/impl_1
+# Command line: vivado -log main_funk.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source main_funk.tcl -notrace
+# Log file: /media/kurtlike/0bc13ae9-569d-48dc-9158-75f16c6ace65/Vivaldo/Vivado/2021.2/bin/lab2_1/lab2_1.runs/impl_1/main_funk.vdi
+# Journal file: /media/kurtlike/0bc13ae9-569d-48dc-9158-75f16c6ace65/Vivaldo/Vivado/2021.2/bin/lab2_1/lab2_1.runs/impl_1/vivado.jou
+# Running On: Jokend, OS: Linux, CPU Frequency: 3377.337 MHz, CPU Physical cores: 4, Host memory: 12517 MB
+#-----------------------------------------------------------
+source main_funk.tcl -notrace
