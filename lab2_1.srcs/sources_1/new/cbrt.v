@@ -7,16 +7,15 @@ module cbrt(
     output reg [7:0] answer
     );
     
-    wire mul_clk = clk_i;
-    reg mul_rst = 0;
     reg [7:0] mul_a;
     reg [7:0] mul_b;
     reg mul_start = 0;
     wire mul_busy;
     wire [15:0] mul_result;
+    
     mul mul_1(
-        .clk_i(mul_clk),
-        .rst_i(mul_rst),
+        .clk_i(clk_i),
+        .rst_i(rst_i),
         .a_bi(mul_a),
         .b_bi(mul_b),
         .start_i(mul_start),
@@ -45,7 +44,7 @@ module cbrt(
             case(state)
                 IDLE: 
                     if (start_i) begin    
-                        state = WORK;
+                        state <= WORK;
                         y <= 0;
                         b <= 0;
                         x <= x_bi;
@@ -91,7 +90,7 @@ module cbrt(
                                     step_1 <= 0;
                                     step_2 <= 0;
                                     step_3_starts <= 0;
-                                    step_3_logic_part = 0;
+                                    step_3_logic_part <= 0;
                                 end
                             end else if(!mul_start)begin
                                 mul_a <= b;

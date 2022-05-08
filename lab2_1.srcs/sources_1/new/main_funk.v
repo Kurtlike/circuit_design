@@ -13,13 +13,12 @@ module main_funk(
     //cube
     reg cube_starts = 0;
     reg [7:0]cube_input;
-    reg cube_rst = 0;
     reg cube_start = 0;
     wire cube_busy;
     wire [7:0]cube_result;
     cbrt cube(
         .clk_i(clk_i),
-        .rst_i(cube_rst),
+        .rst_i(rst_i),
         .x_bi(cube_input),
         .start_i(cube_start),
         .busy_o(cube_busy),

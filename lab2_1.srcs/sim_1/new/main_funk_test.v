@@ -50,8 +50,10 @@ module main_funk_test;
                 #1;
                 while(busy_o) begin
                     clk_i = 1;
+                    if(i == 5) rst_i = 1;
                     #1;
                     clk_i = 0;
+                    if(i == 5) rst_i = 0;
                     #1;
                 end
                 if(expected[i] != result)begin

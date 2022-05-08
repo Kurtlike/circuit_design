@@ -22,7 +22,6 @@ module mul (
     assign shifted_part_sum = part_sum << ctr;
     assign end_step = ( ctr == 3'h7 );
     assign busy_o = state ;
-    
     always @(posedge clk_i)
         if(rst_i) begin
             ctr<= 0 ;
