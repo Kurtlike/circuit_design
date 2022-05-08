@@ -49,19 +49,20 @@ module main_funk(
          if(rst_i) begin    
              answer <= 0 ;     
              state <= IDLE ;
+             cube_starts <= 0;
+             is_cube_start <= 0;
+             sqrt_logic_part <= 0;
          end else begin
             case(state)
                 IDLE: 
                     if (start_i) begin    
                         state <= WORK; 
-                    
                         sqrt_m <= 1 << 6;
                         sqrt_y <= 0;
                         sqrt_b <= 0;
                         sqrt_x <= b;
                         sqrt_ready <=0;
                         is_cube_ready <= 0;
-                  
                     end
                 WORK:     
                      begin

@@ -20,7 +20,7 @@ module main_funk_test;
     );
     reg[7:0] expected [0:10];
   
-    integer i;
+    integer i, j;
     initial begin
     
         expected[0] = 0;
@@ -34,7 +34,7 @@ module main_funk_test;
         expected[8] = 19;
         expected[9] = 21;
         expected[10] = 21;
-        
+        j = 0;
         for(i = 0; i < 11; i = i + 1) begin
                 a = i * 25;
                 b = i * 25;
@@ -50,11 +50,19 @@ module main_funk_test;
                 #1;
                 while(busy_o) begin
                     clk_i = 1;
-                    if(i == 5) rst_i = 1;
+                    if(i == 5) begin
+                        if(j == 20) begin
+                            rst_i = 1;
+                        end
+                        j = j + 1;
+                    end
                     #1;
                     clk_i = 0;
-                    if(i == 5) rst_i = 0;
+                    if(i == 5 && j == 21) begin
+                        rst_i = 0;
+                    end
                     #1;
+                 
                 end
                 if(expected[i] != result)begin
                      $display("fail");

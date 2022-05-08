@@ -40,6 +40,10 @@ module cbrt(
     always @(posedge clk_i)
          if(rst_i) begin        
              state <= IDLE ;
+             step_2_starts <= 0;
+             step_3_starts <= 0;
+             step_3_logic_part <= 0;
+             mul_start <= 0;
          end else begin
             case(state)
                 IDLE: 
